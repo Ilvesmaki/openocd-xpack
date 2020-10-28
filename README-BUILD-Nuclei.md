@@ -1,5 +1,7 @@
 # How to build the Nuclei OpenOCD
 
+![Build Nuclei OpenOCD](https://github.com/riscv-mcu/openocd-xpack/workflows/Build%20Nuclei%20OpenOCD/badge.svg)
+
 ## Introduction
 
 This project also includes the scripts and additional files required to
