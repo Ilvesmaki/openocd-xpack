@@ -38,7 +38,7 @@ function build_versions()
   # and running the tests after packing the archive.
 
   # Keep them in sync with combo archive content.
-  if [[ "${RELEASE_VERSION}" =~ 0\.10\.0-15 ]]
+  if [[ "${RELEASE_VERSION}" =~ develop ]]
   then
 
     # -------------------------------------------------------------------------
@@ -46,7 +46,7 @@ function build_versions()
     # Used in the licenses folder.
     OPENOCD_FOLDER_NAME="openocd-${OPENOCD_VERSION}"
 
-    OPENOCD_GIT_BRANCH=${OPENOCD_GIT_BRANCH:-"nuclei-cjtag"}
+    OPENOCD_GIT_BRANCH=${OPENOCD_GIT_BRANCH:-"nuclei-develop"}
     # OPENOCD_GIT_BRANCH=${OPENOCD_GIT_BRANCH:-"xpack-develop"}
     OPENOCD_GIT_COMMIT=${OPENOCD_GIT_COMMIT:-""}
 
@@ -83,9 +83,9 @@ function build_versions()
     # Used in the licenses folder.
     OPENOCD_FOLDER_NAME="openocd-${OPENOCD_VERSION}"
 
-    OPENOCD_GIT_BRANCH=${OPENOCD_GIT_BRANCH:-"nuclei-cjtag"}
+    OPENOCD_GIT_BRANCH=${OPENOCD_GIT_BRANCH:-"nuclei-master"}
     # OPENOCD_GIT_BRANCH=${OPENOCD_GIT_BRANCH:-"xpack-develop"}
-    OPENOCD_GIT_COMMIT=${OPENOCD_GIT_COMMIT:-""}
+    OPENOCD_GIT_COMMIT=${OPENOCD_GIT_COMMIT:-"9e6a7a2"}
 
     README_OUT_FILE_NAME="README-${RELEASE_VERSION}.md"
 
@@ -122,7 +122,7 @@ function build_versions()
     # Used in the licenses folder.
     OPENOCD_FOLDER_NAME="openocd-${OPENOCD_VERSION}"
 
-    OPENOCD_GIT_BRANCH=${OPENOCD_GIT_BRANCH:-"nuclei-cjtag"}
+    OPENOCD_GIT_BRANCH=${OPENOCD_GIT_BRANCH:-"nuclei-master"}
     OPENOCD_GIT_COMMIT=${OPENOCD_GIT_COMMIT:-""}
 
     README_OUT_FILE_NAME="README-${RELEASE_VERSION}.md"

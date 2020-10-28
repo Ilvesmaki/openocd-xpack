@@ -4,6 +4,8 @@
 
 # The xPack OpenOCD
 
+> **Note**: If you are looking for how to build Nuclei OpenOCD, please check [README-BUILD-Nuclei.md](README-BUILD-Nuclei.md)
+
 This open source project is hosted on GitHub as
 [`xpack-dev-tools/openocd-xpack`](https://github.com/xpack-dev-tools/openocd-xpack)
 and provides the platform specific binaries for the
