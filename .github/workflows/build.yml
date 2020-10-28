@@ -34,9 +34,11 @@ jobs:
     #       sudo apt-get -y install docker-ce
     - name: Preload docker images
       run: |
+        export COMPOSE_INTERACTIVE_NO_CLI=1
         bash ./scripts/build.sh preload-images
     - name: Build nuclei openocd
       run: |
+        export COMPOSE_INTERACTIVE_NO_CLI=1
         bash ./scripts/build.sh --all
     - name: Archive nuclei openocd
       run: |
