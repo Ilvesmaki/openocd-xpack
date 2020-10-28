@@ -3,12 +3,12 @@
 #   (https://xpack.github.io)
 # Copyright (c) 2019 Liviu Ionescu.
 #
-# Permission to use, copy, modify, and/or distribute this software 
+# Permission to use, copy, modify, and/or distribute this software
 # for any purpose is hereby granted, under the terms of the MIT license.
 # -----------------------------------------------------------------------------
 
-# Helper script used in the second edition of the GNU MCU Eclipse build 
-# scripts. As the name implies, it should contain only functions and 
+# Helper script used in the second edition of the GNU MCU Eclipse build
+# scripts. As the name implies, it should contain only functions and
 # should be included with 'source' by the container build scripts.
 
 # -----------------------------------------------------------------------------
@@ -16,7 +16,7 @@
 function build_versions()
 {
   # The \x2C is a comma in hex; without this trick the regular expression
-  # that processes this string in the Makefile, silently fails and the 
+  # that processes this string in the Makefile, silently fails and the
   # bfdver.h file remains empty.
   BRANDING="${BRANDING}\x2C ${TARGET_MACHINE}"
 
@@ -24,7 +24,7 @@ function build_versions()
   OPENOCD_GIT_COMMIT=${OPENOCD_GIT_COMMIT:-""}
 
   OPENOCD_SRC_FOLDER_NAME=${OPENOCD_SRC_FOLDER_NAME:-"${OPENOCD_PROJECT_NAME}.git"}
-  OPENOCD_GIT_URL=${OPENOCD_GIT_URL:-"https://github.com/xpack-dev-tools/openocd.git"}
+  OPENOCD_GIT_URL=${OPENOCD_GIT_URL:-"https://github.com/riscv-mcu/riscv-openocd.git"}
 
   LIBFTDI_PATCH=""
   LIBUSB_W32_PATCH=""
@@ -36,20 +36,20 @@ function build_versions()
 
   # TODO: update to new strategy, and naming schema, with build_xxx
   # and running the tests after packing the archive.
-  
+
   # Keep them in sync with combo archive content.
   if [[ "${RELEASE_VERSION}" =~ 0\.10\.0-15 ]]
   then
 
     # -------------------------------------------------------------------------
-    
+
     # Used in the licenses folder.
     OPENOCD_FOLDER_NAME="openocd-${OPENOCD_VERSION}"
 
-    OPENOCD_GIT_BRANCH=${OPENOCD_GIT_BRANCH:-"xpack"}
+    OPENOCD_GIT_BRANCH=${OPENOCD_GIT_BRANCH:-"nuclei-cjtag"}
     # OPENOCD_GIT_BRANCH=${OPENOCD_GIT_BRANCH:-"xpack-develop"}
-    OPENOCD_GIT_COMMIT=${OPENOCD_GIT_COMMIT:-"819d1a93b400582e008a7d02ccad93ffedf1161f"}
-    
+    OPENOCD_GIT_COMMIT=${OPENOCD_GIT_COMMIT:-""}
+
     # -------------------------------------------------------------------------
 
     do_libusb1 "1.0.22"
@@ -77,15 +77,15 @@ function build_versions()
   then
 
     # -------------------------------------------------------------------------
-    
+
     OPENOCD_VERSION="0.10.0-14"
 
     # Used in the licenses folder.
     OPENOCD_FOLDER_NAME="openocd-${OPENOCD_VERSION}"
 
-    OPENOCD_GIT_BRANCH=${OPENOCD_GIT_BRANCH:-"xpack"}
+    OPENOCD_GIT_BRANCH=${OPENOCD_GIT_BRANCH:-"nuclei-cjtag"}
     # OPENOCD_GIT_BRANCH=${OPENOCD_GIT_BRANCH:-"xpack-develop"}
-    OPENOCD_GIT_COMMIT=${OPENOCD_GIT_COMMIT:-"e5be992df1a893e2e865419a02a564d5f9ccd9dd"}
+    OPENOCD_GIT_COMMIT=${OPENOCD_GIT_COMMIT:-""}
 
     README_OUT_FILE_NAME="README-${RELEASE_VERSION}.md"
 
@@ -116,14 +116,14 @@ function build_versions()
   then
 
     # -------------------------------------------------------------------------
-    
+
     OPENOCD_VERSION="0.10.0-13"
 
     # Used in the licenses folder.
     OPENOCD_FOLDER_NAME="openocd-${OPENOCD_VERSION}"
 
-    OPENOCD_GIT_BRANCH=${OPENOCD_GIT_BRANCH:-"xpack"}
-    OPENOCD_GIT_COMMIT=${OPENOCD_GIT_COMMIT:-"191d1b176cf32280fc649d3c5afcff44d6205daf"}
+    OPENOCD_GIT_BRANCH=${OPENOCD_GIT_BRANCH:-"nuclei-cjtag"}
+    OPENOCD_GIT_COMMIT=${OPENOCD_GIT_COMMIT:-""}
 
     README_OUT_FILE_NAME="README-${RELEASE_VERSION}.md"
 
