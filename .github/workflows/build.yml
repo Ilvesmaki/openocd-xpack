@@ -34,7 +34,9 @@ jobs:
     #       sudo apt-get -y install docker-ce
     - name: Preload docker images
       run: |
-        export COMPOSE_INTERACTIVE_NO_CLI=1
+        # Remove --tty in script to try to avoid error: the input device is not a TTY
+        # No need for non-ci run
+        find scripts/ -type f | xargs sed -i -e 's/--tty/ /g'
         bash ./scripts/build.sh preload-images
     - name: Build nuclei openocd
       run: |
